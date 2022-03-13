@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api:
+    container_name: api
+    image: 576625574995.dkr.ecr.us-west-2.amazonaws.com/cryptomate:api-latest
+    restart: always
+    network_mode: host
+
+  server:
+    container_name: server
+    image: 576625574995.dkr.ecr.us-west-2.amazonaws.com/cryptomate:server-latest
+    restart: always
+    network_mode: host
+    # depends_on:
+    #   - "api"
+
+  # client:
+  #   container_name: client
+  #   image: 576625574995.dkr.ecr.us-west-2.amazonaws.com/cryptomate:client-latest
+  #   restart: always
+  #   network_mode: host
+  #   depends_on:
+  #     - "api"
+  #     - "server" 
+  #   environment:
+  #     BUCKET_NAME: aws.yunn.tw
+  #     OBJECT_NAME: _alex_BINANCE.ETHUSDTPERP.1h_DT/20211222012856112r0s70uYWfXMJvzor1DMIpx9ULyhUjgiHbmuWyIn6qRImT5N1zBtEa4yvhSoR0BmL.contract
+  #     FILE_NAME: 20211222012856112r0s70uYWfXMJvzor1DMIpx9ULyhUjgiHbmuWyIn6qRImT5N1zBtEa4yvhSoR0BmL.contract
+
+  
