@@ -14,20 +14,7 @@ export class CryptomateCICDStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // const certificateArn = 'arn:aws:acm:us-east-1:172755610134:certificate/37a43c92-3cee-49fc-b5d1-cf4e0e6a3b19';
-    // const domain = 'dev.cryptomate.yunn.tw';
-    // const manageDomain = 'manage.dev.cryptomate.yunn.tw';
-    // const assessmentsDomain = 'assessments.dev.cryptomate.yunn.tw'
-    // const domainPrefix = 'cryptomate'
-    // const manageDomainPrefix = 'manage-dev-cryptomate'
     const region = 'us-west-2'
-
-    const domain = 'cryptomate.yunn.tw';
-    const manageDomain = 'manage.cryptomate.yunn.tw';
-    const assessmentsDomain = 'assessments.cryptomate.yunn.tw'
-    const domainPrefix = 'cryptomate'
-    const manageDomainPrefix = 'manage-cryptomate'
-    // const region = 'ap-northeast-1'
 
     const codeBuildRole = new iam.Role(this, 'codeBuildRole', {
       assumedBy: new iam.ServicePrincipal('codebuild.amazonaws.com'),
